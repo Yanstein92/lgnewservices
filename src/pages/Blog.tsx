@@ -58,7 +58,7 @@ const Blog = () => {
     {
       id: '4',
       title: 'SEO for Law Firms: A Guide to Ranking Higher in UAE Search Results',
-      excerpt: 'Practical strategies to improve your law firm's visibility in search engines while focusing on the unique aspects of the UAE legal market.',
+      excerpt: 'Practical strategies to improve your law firm\'s visibility in search engines while focusing on the unique aspects of the UAE legal market.',
       date: 'February 28, 2025',
       author: 'Michael Chen',
       category: 'growth-strategies',

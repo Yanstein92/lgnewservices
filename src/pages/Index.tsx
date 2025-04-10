@@ -30,7 +30,7 @@ const Index = () => {
     },
     {
       title: 'Social Media Management',
-      description: 'Professional social media presence that enhances your firm's reputation while adhering to regulations.',
+      description: 'Professional social media presence that enhances your firm\'s reputation while adhering to regulations.',
       icon: <MessageSquare size={36} />,
       link: '/services/social'
     },
@@ -42,7 +42,7 @@ const Index = () => {
     },
     {
       title: 'Marketing Strategy & Consulting',
-      description: 'Comprehensive marketing plans tailored to your firm's unique needs and practice areas.',
+      description: 'Comprehensive marketing plans tailored to your firm\'s unique needs and practice areas.',
       icon: <BriefcaseBusiness size={36} />,
       link: '/services/strategy'
     }
@@ -50,7 +50,7 @@ const Index = () => {
 
   const testimonials = [
     {
-      quote: "Their deep understanding of both marketing and UAE legal regulations has been invaluable to our firm's growth.",
+      quote: "Their deep understanding of both marketing and UAE legal regulations has been invaluable to our firm\'s growth.",
       author: "Mohammed Al-Mansoori",
       title: "Managing Partner, Al-Mansoori Law Firm",
       rating: 5
@@ -62,7 +62,7 @@ const Index = () => {
       rating: 5
     },
     {
-      quote: "The most trustworthy marketing partner for legal professionals. They truly understand our industry's unique challenges.",
+      quote: "The most trustworthy marketing partner for legal professionals. They truly understand our industry\'s unique challenges.",
       author: "Ahmed Hassan",
       title: "Senior Partner, Hassan & Associates",
       rating: 5
