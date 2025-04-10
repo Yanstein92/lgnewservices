@@ -1,21 +1,14 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Linkedin, Facebook, Instagram } from 'lucide-react';
-
 const Footer = () => {
-  return (
-    <footer className="bg-burgundy text-white pt-12 pb-6">
+  return <footer className="bg-burgundy text-white pt-12 pb-6">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {/* Logo and company info */}
           <div className="col-span-1 md:col-span-1 lg:col-span-1">
             <Link to="/" className="inline-block mb-4">
-              <img 
-                src="/lovable-uploads/d1e2e803-97ff-45fe-a66d-3c9bc1cf2547.png" 
-                alt="Legal Growth Architects" 
-                className="h-14" 
-              />
+              <img src="/lovable-uploads/d1e2e803-97ff-45fe-a66d-3c9bc1cf2547.png" alt="Legal Growth Architects" className="h-14" />
             </Link>
             <p className="text-gray-300 mb-4">
               Specialized marketing services for law firms in the UAE, ensuring compliance and driving growth.
@@ -67,7 +60,7 @@ const Footer = () => {
               </div>
               <div className="flex items-start">
                 <Mail size={18} className="text-gold mt-1 mr-2" />
-                <span className="text-gray-300">info@legalgrowtharchitects.com</span>
+                <span className="text-gray-300">info@lawyergates.com</span>
               </div>
               <div className="flex items-start">
                 <MapPin size={18} className="text-gold mt-1 mr-2" />
@@ -89,8 +82,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
