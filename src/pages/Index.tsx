@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Globe, BarChart, FileText, MessageSquare, Target, BriefcaseBusiness, Database, Bot, Scale } from 'lucide-react';
@@ -7,6 +8,7 @@ import ServiceCard from '@/components/ServiceCard';
 import TestimonialCard from '@/components/TestimonialCard';
 import CTASection from '@/components/CTASection';
 import SolutionCard from '@/components/SolutionCard';
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 
 const Index = () => {
   const services = [
@@ -95,19 +97,60 @@ const Index = () => {
       quote: "Their deep understanding of both marketing and UAE legal regulations has been invaluable to our firm's growth.",
       author: "Mohammed Al-Mansoori",
       title: "Managing Partner, Al-Mansoori Law Firm",
-      rating: 5
+      rating: 5,
+      imageUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80"
     },
     {
       quote: "Legal Growth Architects helped us establish a professional online presence while ensuring complete compliance.",
       author: "Sarah Johnson",
       title: "Principal Attorney, Johnson Legal Consultants",
-      rating: 5
+      rating: 5,
+      imageUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1288&q=80"
     },
     {
       quote: "The most trustworthy marketing partner for legal professionals. They truly understand our industry's unique challenges.",
       author: "Ahmed Hassan",
       title: "Senior Partner, Hassan & Associates",
-      rating: 5
+      rating: 5,
+      imageUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80"
+    }
+  ];
+
+  const pressPartners = [
+    {
+      name: "The Legal Gazette",
+      logo: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      url: "#"
+    },
+    {
+      name: "Emirates Law Journal",
+      logo: "https://images.unsplash.com/photo-1616469829941-c7200edec809?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      url: "#"
+    },
+    {
+      name: "UAE Business Review",
+      logo: "https://images.unsplash.com/photo-1557838923-2985c318be48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80",
+      url: "#"
+    },
+    {
+      name: "Gulf Legal Times",
+      logo: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      url: "#"
+    }
+  ];
+
+  const heroSlides = [
+    {
+      image: "https://images.unsplash.com/photo-1575505586569-646b2ca898fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2105&q=80",
+      title: "Grow Your UAE Law Practice",
+      subtitle: "Ethically & Effectively",
+      description: "Specialized marketing services for legal professionals who need to navigate the UAE's complex advertising regulations."
+    },
+    {
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      title: "Tailored Solutions",
+      subtitle: "For Legal Professionals",
+      description: "Custom-built marketing and technology solutions designed specifically for UAE law firms."
     }
   ];
 
@@ -115,26 +158,48 @@ const Index = () => {
     <>
       <Navbar />
       
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-burgundy to-burgundy-dark text-white pt-20 pb-20 md:pt-28 md:pb-28">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6">
-              Grow Your UAE Law Practice, <span className="text-gold">Ethically & Effectively</span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8">
-              Specialized marketing services for legal professionals who need to navigate the UAE's complex advertising regulations.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <Link to="/contact" className="btn-secondary text-center">
-                Book a Free Consultation
-              </Link>
-              <Link to="/services" className="bg-transparent border-2 border-white text-white hover:bg-white/10 px-6 py-3 rounded-md font-medium transition-colors duration-300 text-center">
-                Explore Our Services
-              </Link>
-            </div>
+      {/* Hero Section with Carousel */}
+      <section className="relative">
+        <Carousel className="w-full">
+          <CarouselContent>
+            {heroSlides.map((slide, index) => (
+              <CarouselItem key={index}>
+                <div className="relative h-[80vh] w-full">
+                  <div className="absolute inset-0 bg-black/50 z-10"></div>
+                  <img 
+                    src={slide.image} 
+                    alt={slide.title} 
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 z-20 flex items-center justify-center">
+                    <div className="container mx-auto px-4 md:px-6 text-center">
+                      <div className="max-w-3xl mx-auto text-white">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-2 animate-fade-in">
+                          {slide.title} <span className="text-gold">{slide.subtitle}</span>
+                        </h1>
+                        <p className="text-xl md:text-2xl mb-8 animate-fade-in">
+                          {slide.description}
+                        </p>
+                        <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                          <Link to="/contact" className="btn-secondary text-center">
+                            Book a Free Consultation
+                          </Link>
+                          <Link to="/services" className="bg-transparent border-2 border-white text-white hover:bg-white/10 px-6 py-3 rounded-md font-medium transition-colors duration-300 text-center">
+                            Explore Our Services
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="absolute bottom-4 left-0 right-0 z-30 flex justify-center gap-2">
+            <CarouselPrevious className="relative left-0 bg-white/20 hover:bg-white/40 text-white border-none" />
+            <CarouselNext className="relative right-0 bg-white/20 hover:bg-white/40 text-white border-none" />
           </div>
-        </div>
+        </Carousel>
       </section>
       
       {/* Why Choose Us Section */}
@@ -248,45 +313,75 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Process Section */}
-      <section className="py-20 bg-gray-50">
+      {/* Approach Section - Redesigned */}
+      <section className="py-20 bg-gradient-to-r from-burgundy-dark to-burgundy text-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="section-title">Our Approach</h2>
-            <p className="text-lg text-gray-600">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-gold">Our Approach</h2>
+            <p className="text-lg text-white/80">
               A systematic process tailored to the unique needs of legal professionals in the UAE.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full bg-burgundy text-white flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
-              <h3 className="text-xl font-serif font-semibold text-burgundy mb-2">Discovery</h3>
-              <p className="text-gray-600">We learn about your practice, goals, and current marketing efforts.</p>
+            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg border border-white/20 hover:bg-white/20 transition-colors duration-300">
+              <div className="w-20 h-20 rounded-full bg-gold text-burgundy flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-lg">1</div>
+              <h3 className="text-xl font-serif font-semibold text-gold mb-4 text-center">Discovery</h3>
+              <p className="text-white/90 text-center">We learn about your practice, goals, and current marketing efforts through an in-depth consultation.</p>
             </div>
             
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full bg-burgundy text-white flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
-              <h3 className="text-xl font-serif font-semibold text-burgundy mb-2">Strategy</h3>
-              <p className="text-gray-600">We develop a tailored marketing plan that aligns with regulations.</p>
+            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg border border-white/20 hover:bg-white/20 transition-colors duration-300">
+              <div className="w-20 h-20 rounded-full bg-gold text-burgundy flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-lg">2</div>
+              <h3 className="text-xl font-serif font-semibold text-gold mb-4 text-center">Strategy</h3>
+              <p className="text-white/90 text-center">We develop a tailored marketing plan that aligns with regulations and your specific business objectives.</p>
             </div>
             
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full bg-burgundy text-white flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
-              <h3 className="text-xl font-serif font-semibold text-burgundy mb-2">Implementation</h3>
-              <p className="text-gray-600">Our team executes the plan with attention to detail and compliance.</p>
+            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg border border-white/20 hover:bg-white/20 transition-colors duration-300">
+              <div className="w-20 h-20 rounded-full bg-gold text-burgundy flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-lg">3</div>
+              <h3 className="text-xl font-serif font-semibold text-gold mb-4 text-center">Implementation</h3>
+              <p className="text-white/90 text-center">Our team executes the plan with meticulous attention to detail, compliance, and brand consistency.</p>
             </div>
             
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full bg-burgundy text-white flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
-              <h3 className="text-xl font-serif font-semibold text-burgundy mb-2">Optimization</h3>
-              <p className="text-gray-600">We continuously measure, report, and refine to improve results.</p>
+            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg border border-white/20 hover:bg-white/20 transition-colors duration-300">
+              <div className="w-20 h-20 rounded-full bg-gold text-burgundy flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-lg">4</div>
+              <h3 className="text-xl font-serif font-semibold text-gold mb-4 text-center">Optimization</h3>
+              <p className="text-white/90 text-center">We continuously measure, report, and refine strategies to maximize ROI and improve results.</p>
             </div>
           </div>
         </div>
       </section>
       
-      {/* Testimonials Section */}
+      {/* Press Media Partners Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="section-title">Featured In</h2>
+            <p className="text-lg text-gray-600">
+              Our expertise has been recognized by leading publications in the legal and business community.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+            {pressPartners.map((partner, index) => (
+              <a 
+                key={index} 
+                href={partner.url} 
+                className="block bg-white p-6 rounded-lg border border-gray-200 hover:shadow-md transition-shadow duration-300"
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <img 
+                  src={partner.logo} 
+                  alt={partner.name} 
+                  className="w-full h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300" 
+                />
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Testimonials Section - with Photos */}
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
@@ -304,6 +399,7 @@ const Index = () => {
                 author={testimonial.author}
                 title={testimonial.title}
                 rating={testimonial.rating}
+                imageUrl={testimonial.imageUrl}
               />
             ))}
           </div>
