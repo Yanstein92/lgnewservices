@@ -1,12 +1,12 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Globe, BarChart, FileText, MessageSquare, Target, BriefcaseBusiness } from 'lucide-react';
+import { Globe, BarChart, FileText, MessageSquare, Target, BriefcaseBusiness, Database, Bot, Scale } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ServiceCard from '@/components/ServiceCard';
 import TestimonialCard from '@/components/TestimonialCard';
 import CTASection from '@/components/CTASection';
+import SolutionCard from '@/components/SolutionCard';
 
 const Index = () => {
   const services = [
@@ -48,9 +48,51 @@ const Index = () => {
     }
   ];
 
+  const solutions = [
+    {
+      title: 'Law Office Management System',
+      description: 'A comprehensive practice management solution seamlessly integrated with your website. Manage cases, documents, billing, and client communications in one secure platform.',
+      icon: <Database size={48} />,
+      features: [
+        'Client portal integration',
+        'Document management',
+        'Time tracking & billing',
+        'Calendar & scheduling'
+      ],
+      link: '/solutions/management',
+      ctaText: 'Explore Office Solutions'
+    },
+    {
+      title: 'AI Lawyer Assistant',
+      description: 'An advanced AI assistant that helps your team research cases, explore legal solutions, and draft documents - all while ensuring compliance with UAE law requirements.',
+      icon: <Bot size={48} />,
+      features: [
+        'Case research automation',
+        'UAE law compliance checks',
+        'Document drafting assistance',
+        'Legal precedent analysis'
+      ],
+      link: '/solutions/ai-assistant',
+      ctaText: 'Discover AI Solutions'
+    },
+    {
+      title: 'Legal Analytics Platform',
+      description: 'Data-driven insights to optimize your practice performance, identify trends, and make strategic decisions based on comprehensive analytics tailored to the UAE legal landscape.',
+      icon: <Scale size={48} />,
+      features: [
+        'Practice area performance metrics',
+        'Client acquisition analysis',
+        'Case outcome predictions',
+        'Resource optimization tools'
+      ],
+      link: '/solutions/analytics',
+      ctaText: 'See Analytics Platform'
+    }
+  ];
+
   const testimonials = [
     {
-      quote: "Their deep understanding of both marketing and UAE legal regulations has been invaluable to our firm\'s growth.",
+      quote: "Their deep understanding of both marketing and UAE legal regulations has been invaluable to our firm's growth.",
       author: "Mohammed Al-Mansoori",
       title: "Managing Partner, Al-Mansoori Law Firm",
       rating: 5
@@ -62,7 +104,7 @@ const Index = () => {
       rating: 5
     },
     {
-      quote: "The most trustworthy marketing partner for legal professionals. They truly understand our industry\'s unique challenges.",
+      quote: "The most trustworthy marketing partner for legal professionals. They truly understand our industry's unique challenges.",
       author: "Ahmed Hassan",
       title: "Senior Partner, Hassan & Associates",
       rating: 5
@@ -176,6 +218,32 @@ const Index = () => {
             <Link to="/services" className="btn-primary">
               View All Services
             </Link>
+          </div>
+        </div>
+      </section>
+      
+      {/* Solutions Section */}
+      <section className="py-20 bg-gold/10">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="section-title">Specialized Solutions for Lawyers</h2>
+            <p className="text-lg text-gray-600">
+              Beyond marketing, we offer comprehensive technology solutions designed specifically for UAE legal professionals to streamline operations and enhance client service.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {solutions.map((solution, index) => (
+              <SolutionCard
+                key={index}
+                title={solution.title}
+                description={solution.description}
+                icon={solution.icon}
+                features={solution.features}
+                link={solution.link}
+                ctaText={solution.ctaText}
+              />
+            ))}
           </div>
         </div>
       </section>
