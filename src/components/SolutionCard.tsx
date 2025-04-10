@@ -7,17 +7,23 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 interface SolutionCardProps {
   title: string;
   description: string;
-  icon: React.ReactNode;
+  imageUrl: string;
   features: string[];
   link: string;
   ctaText: string;
 }
 
-const SolutionCard = ({ title, description, icon, features, link, ctaText }: SolutionCardProps) => {
+const SolutionCard = ({ title, description, imageUrl, features, link, ctaText }: SolutionCardProps) => {
   return (
     <Card className="flex flex-col h-full bg-white overflow-hidden transition-all duration-300 hover:shadow-lg border border-gold/20">
+      <div className="aspect-video w-full overflow-hidden">
+        <img 
+          src={imageUrl} 
+          alt={title} 
+          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+        />
+      </div>
       <CardHeader className="pb-4">
-        <div className="mb-4 text-burgundy">{icon}</div>
         <CardTitle className="text-2xl font-serif text-burgundy">{title}</CardTitle>
         <CardDescription className="text-gray-600 mt-2">{description}</CardDescription>
       </CardHeader>

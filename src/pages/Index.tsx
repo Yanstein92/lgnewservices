@@ -52,7 +52,7 @@ const Index = () => {
     {
       title: 'Law Office Management System',
       description: 'A comprehensive practice management solution seamlessly integrated with your website. Manage cases, documents, billing, and client communications in one secure platform.',
-      icon: <Database size={48} />,
+      imageUrl: 'https://images.unsplash.com/photo-1543286386-2e659306cd6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2100&q=80',
       features: [
         'Client portal integration',
         'Document management',
@@ -65,7 +65,7 @@ const Index = () => {
     {
       title: 'AI Lawyer Assistant',
       description: 'An advanced AI assistant that helps your team research cases, explore legal solutions, and draft documents - all while ensuring compliance with UAE law requirements.',
-      icon: <Bot size={48} />,
+      imageUrl: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
       features: [
         'Case research automation',
         'UAE law compliance checks',
@@ -78,7 +78,7 @@ const Index = () => {
     {
       title: 'Legal Analytics Platform',
       description: 'Data-driven insights to optimize your practice performance, identify trends, and make strategic decisions based on comprehensive analytics tailored to the UAE legal landscape.',
-      icon: <Scale size={48} />,
+      imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
       features: [
         'Practice area performance metrics',
         'Client acquisition analysis',
@@ -238,7 +238,7 @@ const Index = () => {
                 key={index}
                 title={solution.title}
                 description={solution.description}
-                icon={solution.icon}
+                imageUrl={solution.imageUrl}
                 features={solution.features}
                 link={solution.link}
                 ctaText={solution.ctaText}
