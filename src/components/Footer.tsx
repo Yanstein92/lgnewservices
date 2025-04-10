@@ -8,7 +8,7 @@ const Footer = () => {
           {/* Logo and company info */}
           <div className="col-span-1 md:col-span-1 lg:col-span-1">
             <Link to="/" className="inline-block mb-4">
-              <img src="/lovable-uploads/d1e2e803-97ff-45fe-a66d-3c9bc1cf2547.png" alt="Legal Growth Architects" className="h-14" />
+              <img alt="Legal Growth Architects" className="h-14" src="/lovable-uploads/30f2d89b-2116-4002-b811-bd7becffb16f.png" />
             </Link>
             <p className="text-gray-300 mb-4">
               Specialized marketing services for law firms in the UAE, ensuring compliance and driving growth.
