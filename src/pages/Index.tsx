@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Globe, BarChart, FileText, MessageSquare, Target, BriefcaseBusiness, Database, Bot, Scale } from 'lucide-react';
@@ -154,6 +153,41 @@ const Index = () => {
     }
   ];
 
+  const trustPartners = [
+    {
+      name: "Al Tamimi & Company",
+      logo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100&q=80",
+    },
+    {
+      name: "Hadef & Partners",
+      logo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100&q=80",
+    },
+    {
+      name: "Baker McKenzie Habib Al Mulla",
+      logo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100&q=80",
+    },
+    {
+      name: "Clyde & Co",
+      logo: "https://images.unsplash.com/photo-1556157382-97eda2f9e8b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100&q=80",
+    },
+    {
+      name: "Al Safar & Partners",
+      logo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&h=100&q=80",
+    },
+    {
+      name: "BSA Ahmad Bin Hezeem & Associates",
+      logo: "https://images.unsplash.com/photo-1507152832244-10d45c7eda57?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100&q=80",
+    },
+    {
+      name: "Norton Rose Fulbright",
+      logo: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100&q=80",
+    },
+    {
+      name: "Global Advocates",
+      logo: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100&q=80",
+    },
+  ];
+
   return (
     <>
       <Navbar />
@@ -200,6 +234,46 @@ const Index = () => {
             <CarouselNext className="relative right-0 bg-white/20 hover:bg-white/40 text-white border-none" />
           </div>
         </Carousel>
+      </section>
+      
+      {/* They Trust Us Section - Continuously Moving Ribbon */}
+      <section className="py-10 bg-gray-100 overflow-hidden">
+        <div className="container mx-auto px-4 md:px-6 mb-8">
+          <h2 className="text-2xl md:text-3xl font-serif font-bold text-center text-burgundy mb-4">
+            They Trust Us
+          </h2>
+          <p className="text-center text-gray-600 max-w-2xl mx-auto mb-8">
+            Leading law firms across the UAE rely on our expertise to enhance their digital presence
+          </p>
+        </div>
+        
+        <div className="relative flex overflow-x-hidden">
+          <div className="animate-marquee whitespace-nowrap flex items-center py-4">
+            {trustPartners.map((partner, index) => (
+              <div key={`partner-1-${index}`} className="mx-4 flex items-center justify-center bg-white p-6 rounded-lg shadow-sm h-24 w-40">
+                <img 
+                  src={partner.logo} 
+                  alt={partner.name} 
+                  className="h-14 w-14 object-cover rounded-full" 
+                />
+                <span className="ml-3 text-sm font-medium text-gray-700">{partner.name.split(' ')[0]}</span>
+              </div>
+            ))}
+          </div>
+          
+          <div className="absolute top-0 animate-marquee2 whitespace-nowrap flex items-center py-4">
+            {trustPartners.map((partner, index) => (
+              <div key={`partner-2-${index}`} className="mx-4 flex items-center justify-center bg-white p-6 rounded-lg shadow-sm h-24 w-40">
+                <img 
+                  src={partner.logo} 
+                  alt={partner.name} 
+                  className="h-14 w-14 object-cover rounded-full" 
+                />
+                <span className="ml-3 text-sm font-medium text-gray-700">{partner.name.split(' ')[0]}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
       
       {/* Why Choose Us Section */}
